@@ -1,0 +1,293 @@
+			/*! ========================================================================
+			 * Bootstrap Toggle: bootstrap-toggle.css v2.2.0
+			 * http://www.bootstraptoggle.com
+			 * ========================================================================
+			 * Copyright 2014 Min Hur, The New York Times Company
+			 * Licensed under MIT
+			 * ======================================================================== */
+
+
+				body {
+				  padding-top: 50px;
+				  overflow:hidden;
+					background-color: #fdf4ff;
+				}
+
+				.sub-header {
+				  padding-bottom: 10px;
+				}
+
+				.navbar-fixed-top {
+				  border: 0;
+				  
+				}
+
+				.sidebar {
+				  display: none;
+				}
+				@media (min-width: 768px) {
+				  .sidebar {
+					position: fixed;
+					top: 50px;
+					bottom: 0;
+					left: 0;
+					z-index: 1000;
+					display: block;
+					padding: 20px;
+					overflow-x: hidden;
+					overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+					background-color: #241428;
+				  }
+				}
+
+				.nav-sidebar {
+				  margin-right: -21px; /* 20px padding + 1px border */
+				  margin-bottom: 20px;
+				  margin-left: -20px;
+				}
+				.nav-sidebar > li > a {
+				  padding-right: 20px;
+				  padding-left: 20px;
+				  color:#f8dbff;
+				}
+				.nav-sidebar > li > a:hover{
+					background-color: #492a52;
+					color:#fe8889;
+				}
+				.nav-sidebar > li > a:active{
+					background-color: #492a52;
+					color:#fe8889;
+				}
+				.nav-sidebar > li > a:focus{
+					background-color: #492a52;
+					color:#fe8889;
+				}
+				.nav-sidebar > .active > a,
+				.nav-sidebar > .active > a:hover{
+					background-color: #492a52;
+				}
+				.nav-sidebar > .active > a:focus {
+				  color: #fe8889;
+				  background-color: #492a52;
+				}
+
+				.main {
+				  padding: 0px;
+				  overflow:hidden;
+				}
+				@media (min-width: 768px) {
+				  .main {
+					padding-right: 0px;
+					padding-left: 0px;
+				  }
+				}
+				.main .page-header {
+				  margin-top: 0;
+				}
+
+				.placeholders {
+				  margin-bottom: 30px;
+				  text-align: center;
+				}
+				.placeholders h4 {
+				  margin-bottom: 0;
+				}
+				.placeholder {
+				  margin-bottom: 20px;
+				}
+				.placeholder img {
+				  display: inline-block;
+				  border-radius: 50%;
+				}
+			#chatBox{
+				width:90%;
+				background-color:#fdf4ff;
+				padding:10px;
+				border-radius:10px;
+				margin-top:10px;
+			}
+
+			.checkbox label .toggle,
+			.checkbox-inline .toggle {
+				margin-left: -20px;
+				margin-right: 5px;
+			}
+
+			.toggle {
+				position: relative;
+				overflow: hidden;
+			}
+			.toggle input[type="checkbox"] {
+				display: none;
+			}
+			.toggle-group {
+				position: absolute;
+				width: 200%;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				transition: left 0.35s;
+				-webkit-transition: left 0.35s;
+				-moz-user-select: none;
+				-webkit-user-select: none;
+			}
+			.toggle.off .toggle-group {
+				left: -100%;
+			}
+			.toggle-on {
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 50%;
+				margin: 0;
+				border: 0;
+				border-radius: 0;
+			}
+			.toggle-off {
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 50%;
+				right: 0;
+				margin: 0;
+				border: 0;
+				border-radius: 0;
+			}
+			.toggle-handle {
+				position: relative;
+				margin: 0 auto;
+				padding-top: 0px;
+				padding-bottom: 0px;
+				height: 100%;
+				width: 0px;
+				border-width: 0 1px;
+			}
+
+			.toggle.btn { min-width: 59px; min-height: 34px; }
+			.toggle-on.btn { padding-right: 24px; }
+			.toggle-off.btn { padding-left: 24px; }
+
+			.toggle.btn-lg { min-width: 79px; min-height: 45px; }
+			.toggle-on.btn-lg { padding-right: 31px; }
+			.toggle-off.btn-lg { padding-left: 31px; }
+			.toggle-handle.btn-lg { width: 40px; }
+
+			.toggle.btn-sm { min-width: 50px; min-height: 30px;}
+			.toggle-on.btn-sm { padding-right: 20px; }
+			.toggle-off.btn-sm { padding-left: 20px; }
+
+			.toggle.btn-xs { min-width: 35px; min-height: 22px;}
+			.toggle-on.btn-xs { padding-right: 12px; }
+			.toggle-off.btn-xs { padding-left: 12px; }
+
+
+			#sendButton {
+			  width: 55px;
+			  height: 50px;
+			  padding: 6px 12px;
+			  font-size: 14px;
+			  line-height: 1.42857143;
+			  color: #fdf4ff;
+				background-color: #492a52;
+			  background-image: none;
+			  border: 1px solid #ccc;
+			  border-radius: 4px;
+			  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+					  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+			  -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+				   -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+					  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+			}
+
+			.form-control2 {
+			  width: 55px;
+			  height: 34px;
+			  padding: 6px 12px;
+			  font-size: 14px;
+			  line-height: 1.42857143;
+			  color: #555;
+			  background-color: #fff;
+			  background-image: none;
+			  border: 1px solid #ccc;
+			  border-radius: 4px;
+			  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+					  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+			  -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+				   -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+					  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+			}
+			.form-control2:focus {
+			  border-color: #66afe9;
+			  outline: 0;
+			  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+					  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+			}
+			.form-control2::-moz-placeholder {
+			  color: #999;
+			  opacity: 1;
+			}
+			.form-control2:-ms-input-placeholder {
+			  color: #999;
+			}
+			.form-control2::-webkit-input-placeholder {
+			  color: #999;
+			}
+			.form-control2[disabled],
+			.form-control2[readonly],
+			fieldset[disabled] .form-control2 {
+			  background-color: #eee;
+			  opacity: 1;
+			}
+			.form-control2[disabled],
+			fieldset[disabled] .form-control {
+			  cursor: not-allowed;
+			}
+
+
+
+
+			.chat-input {
+			  width: 50%;
+			  height: 50px;
+			  left:-100px;
+			  padding: 6px 12px;
+			  font-size: 14px;
+			  line-height: 1.42857143;
+			  color: #555;
+			  background-color: #fff;
+			  background-image: none;
+			  border: 1px solid #ccc;
+			  border-radius: 4px;
+			  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+					  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+			  -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+				   -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+					  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+			}
+			.chat-input:focus {
+			  border-color: #66afe9;
+			  outline: 0;
+			  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+					  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+			}
+			.chat-input::-moz-placeholder {
+			  color: #999;
+			  opacity: 1;
+			}
+			.chat-input:-ms-input-placeholder {
+			  color: #999;
+			}
+			.chat-input::-webkit-input-placeholder {
+			  color: #999;
+			}
+			.chat-input[disabled],
+			.chat-input[readonly],
+			fieldset[disabled] .form-control2 {
+			  background-color: #eee;
+			  opacity: 1;
+			}
+			.chat-input[disabled],
+			fieldset[disabled] .form-control {
+			  cursor: not-allowed;
+			}

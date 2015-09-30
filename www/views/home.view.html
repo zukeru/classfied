@@ -1,0 +1,178 @@
+   <nav class="navbar navbar-inverse navbar-fixed-top" >
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">San</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Settings</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Help</a></li>
+          </ul>
+          <form class="navbar-form navbar-right">
+            <input type="text" class="form-control" placeholder="Search...">
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar" id='leftMenu'>
+          <ul class="nav nav-sidebar">
+            <li class="active"><a href="#">Grants Room! <span class="sr-only">(current)</span></a></li>
+            <li><a href="#">create room</a></li>
+            <li><a href="#">join room</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#myModal">drop spoi</a></li>
+			<li><a href="#/register" data-toggle="modal" data-target="#register">register</a></li>
+			<li><a href="#" data-toggle="modal" data-target="#login">login</a></li>
+            <li><a href="#">add friends</a></li>
+			<li><a href="#">public rooms</a></li>
+			<li><a href="#">friends</a></li>
+          </ul>
+          <ul class="nav nav-sidebar">
+			<h4 style='color:#f9eefc;margin-left:10px;'>Grants Room Users</h4>
+            <li><a href="#"><img src='static/img/user.png' style='width:35px;height:35px;margin-right:10px;align:left;'>grant zukel tracking: 
+			<input type="checkbox" checked data-toggle="toggle">
+			<img src='static/img/offline.png' style='width:26px;height:26px;margin-left:10px;align:left;'></a>
+			</li>
+          </ul>
+
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" id='heightMap'>
+          <div class="row placeholders">
+            <div id='chatWindow' class="col-xs-6 col-sm-6 placeholder" style="background-color:#fdf4ff;">
+				<br>
+				<center>
+
+					<div id='chatBox'>
+					<span>
+						<img src='static/img/user.png' style='float:left;margin-right:10px;'>
+					</span>
+					<p style='text-align:left;'>
+						Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.
+					</p>
+					<p style='text-align:right;'>delete</p>
+					</div>
+
+
+					<div id='chatBox'>
+					<span>
+						<img src='static/img/user.png' style='float:left;margin-right:10px;'>
+					</span>
+					<p style='text-align:left;'>
+						Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.
+					</p>
+					<p style='text-align:right;'>delete</p>
+					</div>
+
+				</center>
+					<div id='inputChat' style="background-color: #fdf4ff;padding:0px;width:100%;position:absolute;height:100%;" placeholder='say something..' >
+					<input type='text' id='chatinputbox' class="chat-input"></input><button id='sendButton'>send</button>
+					</div>
+
+			</div>
+            <div class="col-xs-6 col-sm-6 placeholder" >
+				<div  id="map" class='map' style="width:400px;height:850px;float:right;" ></div>	
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!-- Modal -->
+
+<div class="modal fade" id="register" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Join Us!</h4>
+      </div>
+      <div class="modal-body">
+
+
+      </div>
+      <div class="modal-footer">
+		thanks for taking the time to fill out this annoying form.
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Login!</h4>
+      </div>
+      <div class="modal-body">
+
+		<div ng-controller="LoginController">
+      </div>
+      <div class="modal-footer">
+		thanks for taking the time to fill out this annoying form.
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">spoi - "social point of intrest"</h4>
+      </div>
+      <div class="modal-body">
+        <form>
+		  <div class="form-group">
+			<label for="exampleInputEmail1">name</label>
+			<input type="text" id="name" class="form-control" id="exampleInputEmail1" placeholder="Name">
+		  </div>
+		  <div class="form-group">
+			<label for="spoidesc">social point of interest description</label>
+			<input type="text" id="spoidesc" class="form-control" id="spoidesc" placeholder="Description">
+		  </div>
+		<div class="form-group">
+			<label for="spoidesc">date </label>
+			<input type="text" id="DD" class="form-control2" style="width:50px;" id="spoidesc" placeholder="DD">/
+			<input type="text" id="MM" class="form-control2" style="width:50px;" id="spoidesc" placeholder="MM">/
+			<input type="text" id="YY" class="form-control2" style="width:50px;" id="spoidesc" placeholder="YY">
+            <label> time </label>
+			<input type="text" id="HR" class="form-control2" style="width:50px;" id="spoidesc" placeholder="HR">:
+			<input type="text" id="MIN" class="form-control2" style="width:60px;" id="spoidesc" placeholder="MIN"> 
+			 <select id='daynight'>
+			  <option value="AM">AM</option>
+			  <option value="PM">PM</option>
+			</select> 
+        </div>
+		  <div class="form-group">
+			<label for="exampleInputFile">File input</label>
+			<input type="file" id="exampleInputFile">
+			<p class="help-block">Example block-level help text here.</p>
+		  </div>
+		  <div class="checkbox">
+			<label>
+			  <input type="checkbox"> Check me out
+			</label>
+		  </div>
+		  <button type="submit" class="btn btn-default">Submit</button>
+	</form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" onClick="dropMarker();" data-dismiss="modal" >Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+

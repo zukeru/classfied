@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+	<html lang="en" xmlns:ng="http://angularjs.org" ng-app="app"> 
+		<head>
+			<meta charset="UTF-8">
+			<title>Classfied</title>
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+			<link href='https://fonts.googleapis.com/css?family=Raleway:400,500' rel='stylesheet' type='text/css'>
+			<link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+			<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.0/css/bootstrap-toggle.min.css" rel="stylesheet">
+		</head>
+<body>
+	   <nav class="navbar navbar-inverse navbar-fixed-top" >
+		  <div class="container-fluid">
+			<div class="navbar-header">
+			  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			  </button>
+			  <a class="navbar-brand" href="#">San</a>
+			</div>
+			<div id="navbar" class="navbar-collapse collapse">
+			  <ul class="nav navbar-nav navbar-right">
+				<li><a href="#">Settings</a></li>
+				<li><a href="#">Profile</a></li>
+				<li><a href="#">Help</a></li>
+			  </ul>
+			  <form class="navbar-form navbar-right">
+				<input type="text" class="form-control" placeholder="Search...">
+			  </form>
+			</div>
+		  </div>
+		</nav>
+
+		<div class="container-fluid">
+		  <div class="row">
+			<div class="col-sm-3 col-md-2 sidebar" id='leftMenu'>
+			  <ul class="nav nav-sidebar">
+				<li class="active"><a href="#">Grants Room! <span class="sr-only">(current)</span></a></li>
+				<li><a href="#">create room</a></li>
+				<li><a href="#">join room</a></li>
+				<li><a href="#" data-toggle="modal" data-target="#myModal">drop spoi</a></li>
+				<li><a href="#/register" data-toggle="modal" data-target="#register">register</a></li>
+				<li><a href="#" data-toggle="modal" data-target="#login">login</a></li>
+				<li><a href="#">add friends</a></li>
+				<li><a href="#">public rooms</a></li>
+				<li><a href="#">friends</a></li>
+			  </ul>
+			  <ul class="nav nav-sidebar">
+				<h4 style='color:#f9eefc;margin-left:10px;'>Grants Room Users</h4>
+				<li><a href="#"><img src='static/img/user.png' style='width:35px;height:35px;margin-right:10px;align:left;'>grant zukel tracking: 
+				<input type="checkbox" checked data-toggle="toggle">
+				<img src='static/img/offline.png' style='width:26px;height:26px;margin-left:10px;align:left;'></a>
+				</li>
+			  </ul>
+
+			</div>
+			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" id='heightMap'>
+			  <div class="row placeholders">
+				<div id='chatWindow' class="col-xs-6 col-sm-6 placeholder" style="background-color:#fdf4ff;">
+					<br>
+					<center>
+					<div ng-view></div>
+				</div>
+				<div class="col-xs-6 col-sm-6 placeholder" >
+					<div  id="map" class='map' style="width:400px;height:850px;float:right;" ></div>	
+				</div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+
+<!-- Modal -->
+
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog" role="document">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			<h4 class="modal-title" id="myModalLabel">spoi - "social point of intrest"</h4>
+		  </div>
+		  <div class="modal-body">
+			<form>
+			  <div class="form-group">
+				<label for="exampleInputEmail1">name</label>
+				<input type="text" id="name" class="form-control" id="exampleInputEmail1" placeholder="Name">
+			  </div>
+			  <div class="form-group">
+				<label for="spoidesc">social point of interest description</label>
+				<input type="text" id="spoidesc" class="form-control" id="spoidesc" placeholder="Description">
+			  </div>
+			<div class="form-group">
+				<label for="spoidesc">date </label>
+				<input type="text" id="DD" class="form-control2" style="width:50px;" id="spoidesc" placeholder="DD">/
+				<input type="text" id="MM" class="form-control2" style="width:50px;" id="spoidesc" placeholder="MM">/
+				<input type="text" id="YY" class="form-control2" style="width:50px;" id="spoidesc" placeholder="YY">
+				<label> time </label>
+				<input type="text" id="HR" class="form-control2" style="width:50px;" id="spoidesc" placeholder="HR">:
+				<input type="text" id="MIN" class="form-control2" style="width:60px;" id="spoidesc" placeholder="MIN"> 
+				 <select id='daynight'>
+				  <option value="AM">AM</option>
+				  <option value="PM">PM</option>
+				</select> 
+			</div>
+			  <div class="form-group">
+				<label for="exampleInputFile">File input</label>
+				<input type="file" id="exampleInputFile">
+				<p class="help-block">Example block-level help text here.</p>
+			  </div>
+			  <div class="checkbox">
+				<label>
+				  <input type="checkbox"> Check me out
+				</label>
+			  </div>
+			  <button type="submit" class="btn btn-default">Submit</button>
+		</form>
+		  </div>
+		  <div class="modal-footer">
+			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			<button type="button" class="btn btn-primary" onClick="dropMarker();" data-dismiss="modal" >Save changes</button>
+		  </div>
+		</div>
+	  </div>
+	</div>
+
+
+</body>
+
+	<link rel="stylesheet" href="static/css/chat.css" />
+	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.css" />
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>		
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>	
+	<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.0/js/bootstrap-toggle.min.js"></script>	
+
+	<script>
+		//set dynamic element height to help out with mobile layout
+		$(document).ready(function() {
+		  function setHeight() {
+			windowHeight = $(window).innerHeight();
+			chatwindowWidth = $('#chatWindow').innerWidth();
+			windowWidth = $(window).innerWidth();
+			leftwindowWidth = $('#leftWindow').innerWidth();
+			leftoverspace = windowWidth - leftwindowWidth;
+			leftoverspace = leftoverspace / 2
+			$('#chatBox').css('min-width', leftoverspace - 300);
+			$('#chatinputbox').css('min-width', leftoverspace - 300);
+			$('#map').css('min-width', leftoverspace-150);
+			$('#inputChat').css('top', windowHeight-100);
+			$('#map').css('min-height', windowHeight-50);
+			//$('#map').css('min-height', windowHeight-50);
+			
+			$('#chatWindow').css('min-height', windowHeight-50);
+		  };
+		  setHeight();
+		  
+		  $(window).resize(function() {
+			setHeight();
+		  });
+		});
+		//define map to use
+		var map = L.map('map').setView([0,0], 13);
+			L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoienVrZXJ1IiwiYSI6ImNpZWtzOXA4cjAwM2Jyd200eG1mNnVtZWsifQ.sOcXd9L2Nw2p-s0DOWvoRw', {
+				maxZoom: 18,
+				attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+					'<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+					'Imagery � <a href="http://mapbox.com">Mapbox</a>',
+				id: 'mapbox.streets'
+			}).addTo(map);
+
+		var popup = L.popup();
+		var dropMarkerBool = "False";
+
+		// check for Geolocation support
+		if (navigator.geolocation) {
+		  console.log('Geolocation is supported!');
+		  var options = {timeout:60000, enableHighAccuracy: true};
+		  navigator.geolocation.getCurrentPosition(showLocation, errorHandler, options);
+		}
+		else {
+		  console.log('Geolocation is not supported for this Browser/OS version yet.');
+		}
+
+		//L.marker([51.5, -0.09]).addTo(map)
+		//	.bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
+
+		//L.circle([51.508, -0.11], 500, {
+		//	color: 'red',
+		//	fillColor: '#f03',
+		//	fillOpacity: 0.5
+		//}).addTo(map).bindPopup("I am a circle.");
+
+		//L.polygon([
+		//	[51.509, -0.08],
+		//	[51.503, -0.06],
+		//	[51.51, -0.047]
+		//]).addTo(map).bindPopup("I am a polygon.");
+
+		function dropMarker(){
+			dropMarkerBool = "True";
+			return dropMarkerBool
+		}
+		function onMapClick(e) {
+			if (dropMarkerBool == "False"){
+				//do nothing for now
+			}
+			else{
+				var name = $('#name').val();
+				var spoidesc = $('#spoidesc').val();
+				var dd = $('#DD').val();
+				var mm = $('#MM').val();
+				var yy = $('#YY').val();
+				var hr = $('#HR').val();
+				var min = $('#MIN').val();
+				var ampm = $('#daynight').val();
+				var spoi_html = "<div style='background-color:#492a52;color:#f8dbff;border-radius:15px;padding:15px;'>Name: " + name + 
+				"<br>description: "+ spoidesc +
+				"<br> date & time: " + dd+"/"+mm+"/"+yy+ " "+hr+":"+min+" "+ampm +
+				"</div>";
+				L.marker(e.latlng).addTo(map).bindPopup(spoi_html).openPopup();
+				dropMarkerBool = "False";
+			}
+		}
+		map.on('click', onMapClick);
+
+
+        function showLocation(position) {
+            var latitude = position.coords.latitude;
+            var longitude = position.coords.longitude;
+
+			locationMarker = L.marker([latitude, longitude]).addTo(map).bindPopup("My Location").openPopup();
+			L.circle([latitude, longitude], 500, {
+				color: 'red',
+				fillColor: '#f03',
+				fillOpacity: 0.5
+			}).addTo(map).bindPopup("acceptable error");
+         }
+
+         function errorHandler(err) {
+            if(err.code == 1) {
+               alert("Error: Access is denied!");
+            }
+            
+            else if( err.code == 2) {
+               alert("Error: Position is unavailable!");
+            }
+         }
+	</script>	
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular-route.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular-cookies.js"></script>
+
+	<script src="app.js"></script>
+	<script src="app-services/authentication.service.js"></script>
+	<script src="app-services/flash.service.js"></script>
+
+	<!-- Real user service that uses an api -->
+	<!-- <script src="app-services/user.service.js"></script> -->
+	<script src="app-services/user.service.local-storage.js"></script>
+
+	<script src="home/home.controller.js"></script>
+	<script src="login/login.controller.js"></script>
+	<script src="register/register.controller.js"></script>
+
+</html>
