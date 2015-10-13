@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-	<html lang="en" xmlns:ng="http://angularjs.org" ng-app="app"> 
+	<html lang="en"> 
 		<head>
 			<meta charset="UTF-8">
 			<title>Classfied</title>
@@ -10,69 +10,9 @@
 			<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.0/css/bootstrap-toggle.min.css" rel="stylesheet">
 		</head>
 <body>
-	   <nav class="navbar navbar-inverse navbar-fixed-top" >
-		  <div class="container-fluid">
-			<div class="navbar-header">
-			  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			  </button>
-			  <a class="navbar-brand" href="#">San</a>
-			</div>
-			<div id="navbar" class="navbar-collapse collapse">
-			  <ul class="nav navbar-nav navbar-right">
-				<li><a href="#">Settings</a></li>
-				<li><a href="#">Profile</a></li>
-				<li><a href="#">Help</a></li>
-			  </ul>
-			  <form class="navbar-form navbar-right">
-				<input type="text" class="form-control" placeholder="Search...">
-			  </form>
-			</div>
-		  </div>
-		</nav>
+<div  id="map" class='map' style="width:400px;height:400px;" ></div>
 
-		<div class="container-fluid">
-		  <div class="row">
-			<div class="col-sm-3 col-md-2 sidebar" id='leftMenu'>
-			  <ul class="nav nav-sidebar">
-				<li class="active"><a href="#">Grants Room! <span class="sr-only">(current)</span></a></li>
-				<li><a href="#">create room</a></li>
-				<li><a href="#">join room</a></li>
-				<li><a href="#" data-toggle="modal" data-target="#myModal">drop spoi</a></li>
-				<li><a href="#/register" data-toggle="modal" data-target="#register">register</a></li>
-				<li><a href="#" data-toggle="modal" data-target="#login">login</a></li>
-				<li><a href="#">add friends</a></li>
-				<li><a href="#">public rooms</a></li>
-				<li><a href="#">friends</a></li>
-			  </ul>
-			  <ul class="nav nav-sidebar">
-				<h4 style='color:#f9eefc;margin-left:10px;'>Grants Room Users</h4>
-				<li><a href="#"><img src='static/img/user.png' style='width:35px;height:35px;margin-right:10px;align:left;'>grant zukel tracking: 
-				<input type="checkbox" checked data-toggle="toggle">
-				<img src='static/img/offline.png' style='width:26px;height:26px;margin-left:10px;align:left;'></a>
-				</li>
-			  </ul>
-
-			</div>
-			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" id='heightMap'>
-			  <div class="row placeholders">
-				<div id='chatWindow' class="col-xs-6 col-sm-6 placeholder" style="background-color:#fdf4ff;">
-					<br>
-					<center>
-					<div ng-view></div>
-				</div>
-				<div class="col-xs-6 col-sm-6 placeholder" >
-					<div  id="map" class='map' style="width:400px;height:850px;float:right;" ></div>	
-				</div>
-			  </div>
-			</div>
-		  </div>
-		</div>
-
-<!-- Modal -->
+<a href="#" data-toggle="modal" data-target="#myModal">drop spoi</a>
 
 	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 	  <div class="modal-dialog" role="document">
@@ -137,6 +77,8 @@
 
 	<script>
 		//set dynamic element height to help out with mobile layout
+		
+		/*
 		$(document).ready(function() {
 		  function setHeight() {
 			windowHeight = $(window).innerHeight();
@@ -160,6 +102,7 @@
 			setHeight();
 		  });
 		});
+		*/
 		//define map to use
 		var map = L.map('map').setView([0,0], 13);
 			L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoienVrZXJ1IiwiYSI6ImNpZWtzOXA4cjAwM2Jyd200eG1mNnVtZWsifQ.sOcXd9L2Nw2p-s0DOWvoRw', {
@@ -248,21 +191,4 @@
             }
          }
 	</script>	
-
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular-route.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular-cookies.js"></script>
-
-	<script src="app.js"></script>
-	<script src="app-services/authentication.service.js"></script>
-	<script src="app-services/flash.service.js"></script>
-
-	<!-- Real user service that uses an api -->
-	<!-- <script src="app-services/user.service.js"></script> -->
-	<script src="app-services/user.service.local-storage.js"></script>
-
-	<script src="home/home.controller.js"></script>
-	<script src="login/login.controller.js"></script>
-	<script src="register/register.controller.js"></script>
-
 </html>
